@@ -1,7 +1,7 @@
 $(window).scroll(function() {
     if ($(document).scrollTop() > 50) {
-      $('nav').addClass('shrink');
+      $('.menu').addClass('shrink');
     } else {
-      $('nav').removeClass('shrink');
+      $('.menu').removeClass('shrink');
     }
   });
