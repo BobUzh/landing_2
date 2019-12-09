@@ -3,11 +3,14 @@ a, a:hover{
     color: black;
 }
 body{
-    background-color: #f8f9fa!important
+    background-color: #f8f9fa!important;
+    font-family: 'Roboto Slab', serif;
+    
 }
 .shrink{
     background-color: #212529;
 }
+
 .header{
     background: url('/img/header-bg.jpg') no-repeat;
     background-size: cover;
@@ -36,7 +39,7 @@ body{
     &-cart{
         span{
             position: relative;
-            font-size: 40px;
+            font-size: 20px;
         }
         p{
             line-height: 1.75;
@@ -62,3 +65,60 @@ body{
         }
     }
 }
+.l-panel{
+    order: 1;
+    text-align: right;
+}
+.r-panel{
+    order: 3;
+}
+.c-panel{
+    order: 2;
+}
+
+
+.about{
+    ul{
+        &::before{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            content: '';
+            background-color: #e9ecef;
+            z-index: -1;
+        }
+        .l-panel, .r-panel, .im{
+            flex: 1;
+        }
+    }
+}
+@media (max-width: 767.98px) { 
+    .clean-div{
+        display: none;
+    }
+    .r-panel{
+        order: 2;
+    }
+    .c-panel{
+        order: 1;
+    }
+    .l-panel{
+        text-align: left;
+    }
+    .about ul::before{
+        left: 26%;
+    }
+ }
+ @media (max-width: 575.98px) { 
+    .about ul::before{
+        left: 14%;
+    }
+    .about ul li .im {
+        flex: none;
+        img{
+            width: 100px;
+        }
+    }
+  }
